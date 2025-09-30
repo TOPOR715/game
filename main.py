@@ -1,1 +1,1 @@
-pr
+print('HI')
