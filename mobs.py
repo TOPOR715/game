@@ -1,22 +1,19 @@
-# class player:
-#     #Класс игрового персонажа
-#     def __init__(self, name, hp, stamina):
-#         self.name = name
-#         self.hp = 100
-#         self.stamina = 100
+class Player:
+    def __init__(self):
+        self.name = None
+        self.age = None
+        self.health = 100
+        self.stamina = 100
+        self.inventory = []
+    
+    def create_player(self):
+        self.name = input("Введите имя персонажа: ")
+        self.age = input("Введите возраст персонажа: ")
+    
+    def __str__(self):
+        return f"Игрок: {self.name}, Возраст: {self.age}, Здоровье: {self.health}, Стамина: {self.stamina}, Инвентарь: {self.inventory}"
 
-#     def damage(self):
-#         print("Ваш персонаж получил урон.")
-
-#     def chek_stamina(self):
-#         print("Ваш уровень стамины: " + self.stamina)
-
-# player1 = player()
-# print(player1)
-
-
-
-
-player = {"Name": None, "Age":None, "ХП":100, "Стамина":100}
-inventar = []
-
+# Создаем и настраиваем игрока
+player = Player()
+player.create_player()
+print(player)
