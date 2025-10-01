@@ -8,7 +8,19 @@ class Home():
         self.rooms = random.sample(self.room_names, self.num_rooms)  # Добавил эту строку!
     
     def __str__(self):
-        return f"🏠 Дом ({self.num_rooms} комнат): {', '.join(self.rooms)}"
+        return f"Дом ({self.num_rooms} комнат): {', '.join(self.rooms)}"
 
-home = Home(2, ["Ванная"])
-print(home)
+class box():
+    def __init__(self, box1 = None, box2 = None, box3 = None):
+        self.box1 = box1 or ["Шкафчик"]
+        self.box2 = box2 or ["Холодильник"]
+        self.box3 = box3 or ["Коробка"]
+        
+    def box():
+        all_box = []
+
+    def __str__(self):
+        return f"В этой комнате {0} хранилищь: {self.box1[0]}, {self.box2[0]}, {self.box3[0]}"
+
+box_rooms = box()
+print(box_rooms)
