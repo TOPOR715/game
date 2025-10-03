@@ -12,7 +12,7 @@ class Player:
         self.age = random.randint(18,40)
     
     def __str__(self):
-        return f"Игрок: {self.name}, Возраст: {self.age}, Здоровье: {self.health}, Стамина: {self.stamina}, Инвентарь: {self.inventory}"
+        return f"""\nВы успешно создали персонажа!\nИмя: {self.name},\nВозраст: {self.age}, \nЗдоровье: {self.health}, \nСтамина: {self.stamina}, \nИнвентарь: {self.inventory}"""
 
 # Создаем и настраиваем игрока
 player = Player()
