@@ -1,4 +1,5 @@
 import random
+# def create_player():
 class Player:
     def __init__(self):
         self.name = None
@@ -13,8 +14,3 @@ class Player:
     
     def __str__(self):
         return f"""\nВы успешно создали персонажа!\nИмя: {self.name},\nВозраст: {self.age}, \nЗдоровье: {self.health}, \nСтамина: {self.stamina}, \nИнвентарь: {self.inventory}"""
-
-# Создаем и настраиваем игрока
-player = Player()
-player.create_player()
-print(player)
