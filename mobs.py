@@ -1,5 +1,12 @@
 import random
 import json
+import os
+
+# Автоматическое создание пути для сохранения в папке скрипта
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+SAVE_DIR = os.path.join(SCRIPT_DIR, 'save_player')
+SAVE_FILE = os.path.join(SAVE_DIR, 'save_player.json')
+
 def Igrok():
     Player_create = {
         "Name": None,
@@ -18,10 +25,22 @@ def create_player():
     return player
 
 def save_player():
-    with open('D:\python_cod\game\saves\save_player.json', 'w', encoding='utf-8') as file:
+    # Создаем папку, если она не существует
+    if not os.path.exists(SAVE_DIR):
+        os.makedirs(SAVE_DIR)
+        print(f"Создана папка для сохранений: {SAVE_DIR}")
+    
+    with open(SAVE_FILE, 'w', encoding='utf-8') as file:
         json.dump(create_player(), file, ensure_ascii=False, indent=4)
+    print(f"Персонаж сохранен в: {SAVE_FILE}")
 
 def look_player():
-    with open('D:\python_cod\game\saves\save_player.json', 'r', encoding='utf-8') as file:
+    if not os.path.exists(SAVE_FILE):
+        print("Файл сохранения не найден!")
+        return
+    
+    with open(SAVE_FILE, 'r', encoding='utf-8') as file:
         data = json.load(file)
-        print(data)
+        print("\n=== Данные персонажа ===")
+        for key, value in data.items():
+            print(f"{key}: {value}")
